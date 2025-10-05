@@ -1,0 +1,65 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.overlay h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #00bcd4, #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.overlay p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+}
+.github-tag {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 14px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.github-tag a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.github-tag:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
