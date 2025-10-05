@@ -1,21 +1,42 @@
-// src/components/GitHubBadge.tsx
 import "./GitHubBadge.css";
+import { FaGithub } from "react-icons/fa";
 
 interface GitHubBadgeProps {
   username: string;
-  repoName?: string; // optional, can be added if desired
-  url?: string;      // optional full URL
+  repoName: string;
+  repoUrl?: string;
 }
 
-export default function GitHubBadge({ username, repoName, url }: GitHubBadgeProps) {
-  const link = url || (repoName ? `https://github.com/${username}/${repoName}` : `https://github.com/${username}`);
-  
+export default function GitHubBadge({
+  username,
+  repoName,
+  repoUrl,
+}: GitHubBadgeProps) {
+  const profileLink = `https://github.com/${username}`;
+  const repoLink = repoUrl || `https://github.com/${username}/${repoName}`;
+
   return (
     <div className="github-badge">
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        {repoName ? `${username} / ${repoName}` : `@${username}`}
+      {/* Username Box */}
+      <a
+        className="github-box username-box"
+        href={profileLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaGithub className="github-icon" />
+        <span>@{username}</span>
+      </a>
+
+      {/* Repo Box */}
+      <a
+        className="github-box repo-box"
+        href={repoLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Find my code here: {repoName}
       </a>
     </div>
   );
 }
-    

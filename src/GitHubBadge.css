@@ -1,26 +1,66 @@
+/* GitHub Badge Container */
 .github-badge {
   position: fixed;
-  bottom: 20px; /* stays bottom-right as in your original code */
+  bottom: 20px;
   right: 25px;
-  z-index: 9999;
-  background: rgba(0,0,0,0.6);
-  color: #00ffff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 6px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Common Box Styling */
+.github-box {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
   border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
-  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
-}
-
-.github-badge a {
-  color: #00ffff;
   text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  transition: all 0.3s ease;
 }
 
-.github-badge:hover {
+.github-box:hover {
+  background: rgba(0, 0, 0, 0.85);
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Username Box */
+.username-box {
+  gap: 8px;
+  color: #00bcd4;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.username-box .github-icon {
+  font-size: 18px;
+  color: #00bcd4;
+}
+
+/* Repository Box */
+.repo-box {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.3px;
+}
+
+.repo-box:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Optional: Top-left positioning variant */
+.github-badge.top-left {
+  top: 20px;
+  bottom: auto;
+  left: 25px;
+  right: auto;
 }
